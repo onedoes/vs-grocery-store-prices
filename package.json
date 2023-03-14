@@ -1,13 +1,22 @@
 {
   "private": true,
-  "scripts": {
-    "build": "turbo build --cache-dir=turbo-cache"
-  },
   "workspaces": [
-    "www"
+    "apps/*",
+    "packages/*"
   ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
   "devDependencies": {
-    "turbo": "1.6.3"
+    "eslint-config-custom": "*",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "packageManager": "yarn@3.4.1"
 }
